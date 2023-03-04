@@ -1,0 +1,1012 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  overflow-x: hidden;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "monts-regular";
+
+  .banner-picture {
+    background-image: url(../img/banner\ picture.png);
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@mixin flexbox {
+  display: flex;
+  flex-flow: column;
+  // height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin buttons {
+  background-color: #0458FF;
+  border-radius: 0;
+  padding: 10px;
+}
+
+// ##########################################################
+// ############## L A P T O P   S C R E E N #################
+// ##########################################################
+
+// **************** H E R O   S E C T I O N ****************
+
+#hero {
+  // z-index: 1;
+  height: 100vh;
+  width: 100%;
+  // background-image: url(../img/banner\ picture.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+
+  nav {
+    background-color: #151515;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+  }
+
+  nav .navbar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar .logo a {
+    font-size: 25px;
+    font-family: "chineserocks";
+    text-decoration: none;
+    color: #fff;
+  }
+
+  nav .navbar .nav-links {
+    display: flex;
+    align-items: center;
+  }
+
+  nav .navbar .nav-links li {
+    list-style: none;
+    margin: 0 8px;
+
+  }
+
+  .nav-links li a {
+    position: relative;
+    font-size: 12px;
+    font-family: "monts-semibold";
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .navbar .nav-links a::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 40%;
+    border-radius: 2px;
+    background-color: #fff;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+  }
+
+  .nav-links li:hover a::before {
+    opacity: 1;
+  }
+
+  .menu .logo-toggle {
+    display: none;
+  }
+
+  nav .navbar .sidebarOpen {
+    fill: #fff;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+  }
+
+  svg {
+    height: 22px;
+    width: 22px;
+  }
+
+  @media screen and (max-width: 790px) {
+
+    nav .navbar .sidebarOpen {
+      display: block;
+    }
+
+    .menu {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background-color: #00143C;
+      z-index: 5;
+      padding: 20px;
+      left: -100%;
+      transition: all 300ms ease-in-out;
+    }
+
+    nav.active .menu {
+      left: -0%;
+    }
+
+    .menu .logo-toggle {
+      display: block;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+    }
+
+    .logo-toggle .sidebarClose {
+      fill: var(--text-color);
+      cursor: pointer;
+    }
+
+    .navbar .nav-links {
+      flex-direction: column;
+      padding-top: 30px;
+    }
+
+    .nav-links li a {
+      display: block;
+      margin-top: 20px;
+    }
+  }
+}
+
+.hero-inner {
+  @include flexbox();
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  .hero-overlay {
+    z-index: 0;
+    background-color: rgba($color: #0458ff, $alpha: 0.7);
+    mix-blend-mode: multiply;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  h1 {
+    padding: 0 25%;
+    font-family: "monts-black";
+    font-size: 60px;
+    z-index: 2;
+    margin-bottom: 30px;
+  }
+
+  p,
+  a {
+    font-family: "monts-semibold";
+    color: #fff !important;
+    z-index: 2;
+
+  }
+
+  a {
+    font-size: 18px;
+  }
+
+  p {
+    padding: 0 30%;
+    margin-bottom: 30px;
+    font-size: 22px;
+  }
+
+  .hero-buttons {
+    z-index: 2;
+
+    .hero-btn01 {
+      @include buttons();
+      margin: 0 10px;
+    }
+  }
+}
+
+
+// ********************* A B O U T   S E C T I O N *****************
+
+#about {
+  height: 100vh;
+
+  .about-inner {
+    height: 100%;
+
+    .pic-container {
+      position: relative;
+      background-image: url(../img/about\ us\ picture.png);
+      background-size: cover;
+      background-position: center;
+      z-index: 2;
+      opacity: 1;
+      padding-right: 0;
+      @include flexbox();
+      height: 100%;
+      color: white;
+      font-family: "chineserocks";
+
+      p {
+        opacity: 0.8;
+        z-index: 2;
+        font-size: 80px;
+        letter-spacing: 50px;
+        line-height: 100px;
+
+        span {
+          color: #0458FF;
+        }
+      }
+
+      .about-overlay {
+        z-index: 1;
+        background-color: rgba($color: #00256E, $alpha: 0.5);
+        mix-blend-mode: multiply;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+      }
+    }
+
+    .text-container {
+      z-index: 2;
+      background-color: #00143C;
+      color: #fff;
+      padding: 100px 150px;
+      @include flexbox();
+      height: 100%;
+
+      h2 {
+        font-family: "chineserocks";
+        font-size: 40px;
+        letter-spacing: 7px;
+
+        span {
+          color: #0458FF;
+        }
+      }
+
+      i {
+        margin-bottom: 50px;
+      }
+
+      p {
+        line-height: 20px;
+        text-align: left;
+        margin-top: 25px;
+      }
+
+      .about-btn {
+        @include buttons();
+        margin-top: 75px;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}
+
+// ********************* M E M B E R S   S E C T I O N *****************
+
+#members {
+  height: 100vh;
+
+  .members-inner {
+    position: relative;
+    background-color: #151515;
+    z-index: 1;
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding: 40px;
+
+    h2 {
+      font-family: "chineserocks";
+      font-size: 72px;
+    }
+
+    svg {
+      margin: 20px 0;
+    }
+
+    h3 {
+      font-family: "chineserocks";
+      font-size: 56px;
+      letter-spacing: 5px;
+      margin-bottom: 80px;
+
+      span {
+        color: #0458FF;
+      }
+    }
+
+    .members {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-around;
+      // flex-wrap: wrap;
+
+      .member {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background-position: center;
+        background-size: cover;
+
+        .member-socials-overlay {
+          background-color: rgba($color: #0458FF, $alpha: 0.75);
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-flow: row;
+          align-items: center;
+          justify-content: space-around;
+          opacity: 0;
+          transition: all 300ms ease-in-out;
+        }
+
+        .member-socials-overlay:hover {
+          opacity: 1;
+        }
+
+        .member-info {
+          width: 100%;
+          margin: 0 auto;
+          position: absolute;
+          bottom: -85px;
+
+          h4 {
+            font-family: "monts-black";
+            font-size: 35px;
+            margin-bottom: 10px;
+          }
+
+          p {
+            font-size: 22px;
+          }
+        }
+      }
+
+      .m1 {
+        background-image: url(../img/dushawn-jovic-cruUfe5g1Zk-unsplash.png);
+      }
+
+      .m2 {
+        background-image: url(../img/zac-bromell-mk2iP2CQQlQ-unsplash.png);
+      }
+
+      .m3 {
+        background-image: url(../img/chichi-onyekanne-rwhBah8HjI0-unsplash.png);
+      }
+    }
+
+  }
+}
+
+// *************** L O G O   B R E A K   S E C T I O N *****************
+
+
+#roots-banner {
+  height: 40vh;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  font-family: "chineserocks";
+  @include flexbox();
+  line-height: 65px;
+
+  h2 {
+    font-size: 80px;
+  }
+
+  p {
+    font-size: 60px;
+    letter-spacing: 15px;
+  }
+
+  i {
+    svg {
+      line {
+        stroke: #000;
+
+      }
+    }
+  }
+}
+
+#music-banner {
+  z-index: 2;
+  height: 60vh;
+  position: relative;
+  font-family: "chineserocks";
+  font-size: 130px;
+  letter-spacing: 20px;
+  @include flexbox();
+  color: white;
+
+}
+
+// *************** O U R   M U S I C   S E C T I O N *****************
+
+
+#our-music {
+  height: 100vh;
+  background-color: #00143C;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  line-height: 22px;
+
+  .row {
+    justify-content: center;
+    // align-items: center;
+    gap: 50px;
+  }
+
+  .text-container {
+
+    h3 {
+      text-align: center;
+      font-family: "chineserocks";
+      font-size: 42px;
+      letter-spacing: 8px;
+
+      span {
+        color: #0458FF;
+      }
+
+    }
+
+    i {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+
+    p {
+      margin-top: 40px;
+
+    }
+  }
+
+  .pic-container {
+    background-image: url(../img/roots\ music\ picture.png);
+    background-position: center;
+    background-size: cover;
+
+  }
+}
+
+// *************** O U R   M U S I C   S E C T I O N *****************
+
+
+#discover {
+  position: relative;
+  height: 100vh;
+  @include flexbox();
+
+  .discover-overlay {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba($color: #00143C, $alpha: 0.8);
+    mix-blend-mode: multiply;
+  }
+
+  .text-container,
+  .pic-container {
+    z-index: 2;
+  }
+
+  .text-container {
+    color: white;
+    font-family: "monts-black";
+    font-size: 36px;
+    @include flexbox();
+    line-height: 50px;
+
+    .icons {
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 30px 0 0 0;
+
+      .icon {
+        a {
+          @include flexbox();
+        }
+
+
+        svg {
+          width: 50px;
+        }
+
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+
+      p {
+        font-family: "monts-regular";
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// *************** U P C O M I N G    S H O W S   S E C T I O N *****************
+
+
+#upcoming-shows {
+  position: relative;
+  height: 100vh;
+  background-color: #00143C;
+  color: white;
+
+  .container {
+    height: 100%;
+
+    .row {
+      height: 100%;
+
+      .header {
+        font-family: "chineserocks";
+        font-size: 56px;
+        letter-spacing: 10px;
+        text-align: center;
+        @include flexbox();
+      }
+
+      .dates {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        gap: 5%;
+
+
+        .show {
+          @include flexbox();
+          flex-direction: row;
+          justify-content: space-between;
+
+          .day-month {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            h5 {
+              font-size: 40px;
+              font-family: "monts-black";
+            }
+
+            .dim-text {
+              opacity: .7;
+            }
+          }
+
+        }
+
+        .buy-tickets {
+          font-size: 14px;
+          color: #fff;
+          border: 3px solid #fff;
+          border-radius: 100px;
+        }
+
+        .more-shows {
+          font-size: 14px;
+          color: #fff;
+          background-color: #0458FF;
+          border-radius: 0px;
+          width: 120px;
+          padding: 10px 0;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+}
+
+// *************** M E R C H A N D I S E   S E C T I O N *****************
+
+
+#merchandise {
+  position: relative;
+  background-color: #00000B;
+
+
+  .container {
+    .header {
+      padding-top: 50px;
+      text-align: center;
+      font-family: "chineserocks";
+      color: white;
+
+      h2 {
+        font-size: 80px;
+      }
+
+      p {
+        font-size: 60px;
+        letter-spacing: 15px;
+
+        span {
+          color: #0458FF;
+        }
+      }
+    }
+
+    .row {
+
+      .merch {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+
+        .pic {
+          height: 200px;
+          width: 200px;
+          background-color: grey;
+        }
+
+        .text {
+          color: #fff;
+
+          h4 {
+            font-family: "monts-semibold";
+            font-size: 20px;
+            margin: 10px 0;
+          }
+
+          p {
+            margin: 15px 0;
+
+            span {
+              color: green;
+            }
+          }
+
+          .open-shop {
+            background-color: #0458FF;
+            border-radius: 0;
+            color: white;
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// *************** C O N T A C T   S E C T I O N *****************
+
+
+#contact {
+  padding-bottom: 150px;
+  padding-top: 50px;
+  position: relative;
+  background-color: #fff;
+
+  .header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-family: "chineserocks";
+    font-size: 60px;
+    letter-spacing: 14px;
+    padding: 50px;
+
+    span {
+      color: #0458FF;
+    }
+  }
+
+  .contact-form {
+
+    border-right: 1px solid #000;
+
+    h3 {
+      font-family: "monts-semibold";
+      font-size: 34px;
+      padding: 20px 0;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .5rem;
+
+      input,
+      textarea {
+        padding: 15px;
+        border: 3px solid rgba($color: #000000, $alpha: 0.2);
+        width: 350px;
+        margin: 10px 10px 10px 0;
+
+      }
+
+      textarea {
+        grid-row: span 3;
+      }
+
+      button {
+        padding: 18px 0;
+        margin: 10px;
+        width: 200px;
+        background-color: #0458FF;
+        color: #fff;
+        font-family: "monts-semibold";
+        border: none;
+
+      }
+    }
+  }
+
+  .subscribe {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 0 50px;
+
+    h3 {
+      font-family: "monts-semibold";
+      font-size: 34px;
+    }
+
+    p {
+      padding: 20px 40px 20px 0;
+      line-height: 20px;
+    }
+
+    input {
+
+      padding: 15px;
+      border: 3px solid rgba($color: #000000, $alpha: 0.2);
+      width: 350px;
+      margin: 10px 10px 10px 0;
+    }
+
+    button {
+      position: absolute;
+      left: 300px;
+      
+      padding: 19px 24px;
+      margin: 10px;
+      background-color: #0458FF;
+      color: #fff;
+      font-family: "monts-semibold";
+      border: none;
+    }
+  }
+}
+
+// *************** F O O T E R *****************
+
+
+footer {
+  padding: 100px;
+  position: relative;
+  background-color: #00143C;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  .foot-item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    line-height: 30px;
+
+    i {
+      margin-bottom: 10px;
+      height: 60px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+
+      svg {
+        width: 60%;
+        margin: 0 auto;
+
+      }
+    }
+  }
+
+  .copyright {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+
+  }
+}
+
+// ########################################################
+// ############### B R E A K P O I N T   1 ################
+// ########################################################
+

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="55" viewBox="0 0 55 55">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f65063"/>
+      <stop offset="1" stop-color="#ff001e"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_21" data-name="Group 21" transform="translate(-1626 -5941)">
+    <rect id="Rectangle_36" data-name="Rectangle 36" width="55" height="55" rx="10" transform="translate(1626 5941)" fill="url(#linear-gradient)"/>
+    <path id="Icon_awesome-itunes-note" data-name="Icon awesome-itunes-note" d="M26.852,27.3a4.461,4.461,0,0,1-3.874,3.375c-1.723.316-3.157.394-4.535-.717a3.46,3.46,0,0,1-.19-5.231c1.2-1.139,2.876-1.371,5.4-1.814a1.751,1.751,0,0,0,1.1-.52c.45-.506.309-.288.309-11.475,0-.788-.387-1.005-1.2-.865-.577.1-13.057,2.433-13.057,2.433-.717.155-.942.366-.942,1.174,0,16.5.077,15.743-.176,16.84a4.092,4.092,0,0,1-2.123,2.777A8.186,8.186,0,0,1,3.108,34a3.591,3.591,0,0,1-2.046-6.089c1.2-1.139,2.876-1.371,5.4-1.814a1.751,1.751,0,0,0,1.1-.52c.71-.809.127-18.042.366-19a1.385,1.385,0,0,1,.5-.907,2.135,2.135,0,0,1,.942-.387C23.709,2.6,25.46,2.257,25.706,2.257a1.106,1.106,0,0,1,1.273,1.237c.014,24.223.077,22.922-.127,23.8Z" transform="translate(1638.001 5951.338)" fill="#fff"/>
+  </g>
+</svg>

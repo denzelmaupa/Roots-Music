@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "monts-black";
+    src: url(Montserrat-Black.ttf);
+}
+
+@font-face {
+    font-family: "monts-semibold";
+    src: url(Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "monts-regular";
+    src: url(Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: "chineserocks";
+    src: url(chinese\ rocks\ rg.ttf);
+}
